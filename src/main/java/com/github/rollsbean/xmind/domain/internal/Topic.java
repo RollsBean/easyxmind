@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * Xmind 节点
  * @author 景行
  * @author Kevin Fan
  * @date 2021/07/06

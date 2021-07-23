@@ -1,6 +1,7 @@
 package com.github.rollsbean.xmind.domain.internal;
 
 /**
+ * 未关联到根节点的节点
  * @author 景行
  * @author Kevin Fan
  * @date 2021/07/06

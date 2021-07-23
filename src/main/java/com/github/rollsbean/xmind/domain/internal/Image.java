@@ -3,6 +3,9 @@ package com.github.rollsbean.xmind.domain.internal;
 import java.util.Objects;
 
 /**
+ * Xmind 节点的图片信息
+ * <br/>
+ * 一个节点只有一张图片
  * @author 景行
  * @author Kevin Fan
  * @date 2021/07/06

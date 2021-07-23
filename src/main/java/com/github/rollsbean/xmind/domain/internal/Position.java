@@ -3,6 +3,7 @@ package com.github.rollsbean.xmind.domain.internal;
 import java.util.Objects;
 
 /**
+ * 位置坐标
  * @author 景行
  * @author Kevin Fan
  * @date 2021/07/06

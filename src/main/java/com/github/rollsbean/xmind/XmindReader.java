@@ -1,9 +1,8 @@
 package com.github.rollsbean.xmind;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.github.rollsbean.xmind.domain.constant.ZenConstant;
+import com.github.rollsbean.xmind.domain.internal.Content;
 import com.github.rollsbean.xmind.exception.XmindCommonException;
 import com.github.rollsbean.xmind.util.ZipUtil;
 import org.apache.commons.compress.archivers.ArchiveException;
@@ -11,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author 景行
@@ -19,12 +19,14 @@ import java.io.IOException;
  **/
 public class XmindReader {
 
-    public static String read(String filePath) throws IOException, ArchiveException {
+    public static List<Content> read(String filePath) throws IOException, ArchiveException {
         String tmpDirPath = getTmpDirPath(filePath);
         String content = ZipUtil.getFileContent(tmpDirPath + File.separator + ZenConstant.CONTENT_JSON);
-        JSONArray jsonArray = JSON.parseArray(content);
+        return JSON.parseArray(content, Content.class);
+    }
 
-        return null;
+    public static List<Content> readContent(String content) {
+        return JSON.parseArray(content, Content.class);
     }
 
     private static String getTmpDirPath(String filePath) throws IOException, ArchiveException {
@@ -36,6 +38,6 @@ public class XmindReader {
     }
 
     public static void main(String[] args) throws IOException, ArchiveException {
-        String read = read("/Users/me/Desktop/File/xmind/搜狗输入法用户运营.xmind");
+        List<Content> contents = read("/Users/me/Desktop/File/xmind/搜狗输入法用户运营.xmind");
     }
 }

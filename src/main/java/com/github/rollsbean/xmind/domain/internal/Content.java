@@ -13,12 +13,21 @@ public class Content{
     @NotNull
     private String id;
 
+    /**
+     * 根节点
+     */
     private Topic rootTopic;
 
+    /**
+     * 链接信息
+     */
     private List<Relationship> relationships;
 
     private Style style;
 
+    /**
+     * 标题
+     */
     private String title;
 
     private Theme theme;
